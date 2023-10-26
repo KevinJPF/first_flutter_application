@@ -8,51 +8,35 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final controller = TextEditingController();
-  final list = <String>[];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home Page"),
       ),
-      body: Column(
+      body: Stack(
+        alignment: Alignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: controller,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {
-                    final text = controller.text;
-                    setState(() {
-                      list.add(text);
-                    });
-                    controller.clear();
-                  },
-                  icon: const Icon(Icons.add),
-                ),
-              ],
-            ),
+          Container(
+            color: Colors.green,
+            width: 100,
+            height: 100,
           ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: list.length,
-              itemBuilder: (context, index) {
-                final item = list[index];
-
-                return ListTile(
-                  title: Text(item),
-                );
-              },
-            ),
-          )
+          Container(
+            color: Colors.yellow,
+            width: 80,
+            height: 80,
+          ),
+          Container(
+            color: Colors.blue,
+            width: 50,
+            height: 50,
+          ),
+          Container(
+            color: Colors.white,
+            width: 50,
+            height: 10,
+          ),
         ],
       ),
     );
