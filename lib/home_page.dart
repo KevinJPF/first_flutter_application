@@ -27,19 +27,30 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              color: Colors.yellow,
-              width: 80,
-              height: 80,
+              color: Colors.black.withOpacity(0.6),
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
             ),
-            Container(
-              color: Colors.blue,
-              width: 50,
-              height: 50,
-            ),
-            Container(
-              color: Colors.white,
-              width: 50,
-              height: 10,
+            SizedBox(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const FlutterLogo(
+                    size: 200,
+                    textColor: Colors.lightBlue,
+                    style: FlutterLogoStyle.horizontal,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(Colors.green),
+                    ),
+                    child: const Text("Entrar no App"),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
